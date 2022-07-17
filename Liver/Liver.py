@@ -103,23 +103,23 @@ def registerSampleData():
   # Liver dataset
   SampleData.SampleDataLogic.registerCustomSampleDataSource(
     category ='Liver',
-    sampleName ='LiverVolume000',
-    thumbnailFileName = os.path.join(iconsPath, 'LiverVolume000.png'),
+    sampleName ='LiverVolume',
+    thumbnailFileName = os.path.join(iconsPath, 'LiverVolume.png'),
     uris = aliveDataURL+'SHA256/5df79d9077b1cf2b746ff5cf9268e0bc4d440eb50fa65308b47bde094640458a',
-    fileNames ='LiverVolume000.nrrd',
+    fileNames ='LiverVolume.nrrd',
     checksums = 'SHA256:5df79d9077b1cf2b746ff5cf9268e0bc4d440eb50fa65308b47bde094640458a',
-    nodeNames ='LiverVolume000',
+    nodeNames ='LiverVolume',
     loadFileType ='VolumeFile'
   )
 
   SampleData.SampleDataLogic.registerCustomSampleDataSource(
     category ='Liver',
-    sampleName ='LiverSegmentation000',
-    thumbnailFileName = os.path.join(iconsPath, 'LiverSegmentation000.png'),
+    sampleName ='LiverSegmentation',
+    thumbnailFileName = os.path.join(iconsPath, 'LiverSegmentation.png'),
     uris = aliveDataURL+'SHA256/56aa9ee4658904dfae5cca514f594fa6c5b490376514358137234e22d57452a4',
-    fileNames ='LiverSegmentation000.seg.nrrd',
+    fileNames ='LiverSegmentation.seg.nrrd',
     checksums = 'SHA256:56aa9ee4658904dfae5cca514f594fa6c5b490376514358137234e22d57452a4',
-    nodeNames ='LiverSegmentation000',
+    nodeNames ='LiverSegmentation',
     loadFileType = 'SegmentationFile'
   )
 
@@ -634,9 +634,9 @@ class LiverTest(ScriptedLoadableModuleTest):
     # slicer.mrmlScene.AddNode(outputVolume)
     # outputVolume.CreateDefaultDisplayNodes()
     # outputVolume.SetAttribute("DistanceMap", "True");
-    # volumeNode = slicer.util.getNode('LiverVolume000')
+    # volumeNode = slicer.util.getNode('LiverVolume')
 
-    # segmentationNode = slicer.util.getNode('LiverSegmentation000')
+    # segmentationNode = slicer.util.getNode('LiverSegmentation')
     # segmentationNode.SetReferenceImageGeometryParameterFromVolumeNode(volumeNode)
     # segmentationNode.CreateBinaryLabelmapRepresentation()
     # segments = vtk.vtkStringArray()
@@ -655,7 +655,7 @@ class LiverTest(ScriptedLoadableModuleTest):
 
     # import sitkUtils
     # import SimpleITK as sitk
-    # groundTruthVolume = slicer.util.getNode('DistanceMap000')
+    # groundTruthVolume = slicer.util.getNode('DistanceMap')
     # groundTruthImage = sitkUtils.PullVolumeFromSlicer(groundTruthVolume)
     # distanceMapImage = sitkUtils.PullVolumeFromSlicer(outputVolume)
     # differenceImage = sitk.Subtract(groundTruthImage, distanceMapImage)
@@ -675,6 +675,6 @@ class LiverTest(ScriptedLoadableModuleTest):
     # Get/create input data
     import SampleData
     registerSampleData()
-    inputSegmentation = SampleData.downloadSample('LiverSegmentation000')
-    inputVolume= SampleData.downloadSample('LiverVolume000')
+    inputSegmentation = SampleData.downloadSample('LiverSegmentation')
+    inputVolume= SampleData.downloadSample('LiverVolume')
     self.delayDisplay('Loaded test data set')

@@ -8,9 +8,9 @@ set(MODULE_PYTHON_SCRIPTS
 
 set(MODULE_PYTHON_RESOURCES
   Resources/Icons/${MODULE_NAME}.png
-  Resources/Icons/LiverVolume000.png
-  Resources/Icons/LiverSegmentation000.png
-  Resources/Icons/DistanceMap000.png
+  Resources/Icons/LiverVolume.png
+  Resources/Icons/LiverSegmentation.png
+  Resources/Icons/DistanceMap.png
   Resources/UI/ResectionsWidget.ui
   Resources/UI/DistanceMapsWidget.ui
   )
